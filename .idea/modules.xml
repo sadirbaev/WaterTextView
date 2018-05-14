@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\AndroidStudio\AndroidProjects\waterback\test02.iml" filepath="C:\AndroidStudio\AndroidProjects\waterback\test02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/waterback.iml" filepath="$PROJECT_DIR$/waterback.iml" />
+      <module fileurl="file://$PROJECT_DIR$/waterbackground/waterbackground.iml" filepath="$PROJECT_DIR$/waterbackground/waterbackground.iml" />
+    </modules>
+  </component>
+</project>
