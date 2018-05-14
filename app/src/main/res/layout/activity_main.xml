@@ -13,13 +13,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <uz.sadirbaev.waterbackground.CustomTextView
+            <uz.sadirbaev.waterbackground.WaterTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="30sp"
                 android:id="@+id/tv30"
                 android:layout_marginBottom="20dp"/>
-            <uz.sadirbaev.waterbackground.CustomTextView
+            <uz.sadirbaev.waterbackground.WaterTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"

@@ -47,7 +47,6 @@ public abstract class BackgroundSpannable {
 
             int saveBound = canvas.save();
 
-            //计算剪裁矩形，保证绘制内容不会超出文本layout
             int clipLeft = tv.getPaddingLeft();
             int clipTop = tv.getTotalPaddingTop() + tv.getScrollY();
             int clipRight = canvas.getWidth() - tv.getPaddingRight();
@@ -55,14 +54,12 @@ public abstract class BackgroundSpannable {
 
             canvas.clipRect(clipLeft, clipTop, clipRight, clipBottom);
 
-            //根据start end  获得起始行数和结束行数
             lineStart = layout.getLineForOffset(start);
             lineEnd = layout.getLineForOffset(end);
 
             if(lineStart != lineEnd){
                 lines = new Rect[(lineEnd + 1) - lineStart];
 
-                //计算每一行中包含当前span的矩形大小
                 for(int i = lineStart; i <= lineEnd; i++){
                     Rect rect = new Rect();
                     layout.getLineBounds(i, rect);
@@ -105,7 +102,6 @@ public abstract class BackgroundSpannable {
 
             int length = lineEnd - lineStart;
 
-            //绘制
             for(int i = 0; i <= lineEnd - lineStart; i++){
                 Rect rect = lines[i];
 

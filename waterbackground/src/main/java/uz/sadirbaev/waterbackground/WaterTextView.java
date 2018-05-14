@@ -16,7 +16,7 @@ import java.util.List;
  * Created by QarakenBacho on 13.05.2018.
  */
 
-public class CustomTextView extends android.support.v7.widget.AppCompatTextView {
+public class WaterTextView extends android.support.v7.widget.AppCompatTextView {
 
     private DrawableBackgroundSpan spanBoth;
     private DrawableBackgroundSpan spanTop;
@@ -25,17 +25,17 @@ public class CustomTextView extends android.support.v7.widget.AppCompatTextView 
     private static int DIFFERENCE = 120;
 
 
-    public CustomTextView(Context context) {
+    public WaterTextView(Context context) {
         super(context);
         init();
     }
 
-    public CustomTextView(Context context, @Nullable AttributeSet attrs) {
+    public WaterTextView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init();
     }
 
-    public CustomTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public WaterTextView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
     }
@@ -67,41 +67,44 @@ public class CustomTextView extends android.support.v7.widget.AppCompatTextView 
 
         int start = 0;
         for (int i=0; i<lines.size(); i++){
-            BackgroundSpannable span = this.spanBoth;
+            BackgroundSpannable span = spanBoth;
             int PADDING = 20;
-            if (i==0){
-                if (widths.get(i+1) - widths.get(i)> DIFFERENCE){
-                    if (this.spanBottom != null) {
-                        span = spanBottom;
-                        PADDING = 60;
-                    }
-                }
-            } else {
-                if (i==lines.size()-1){
-                    if (widths.get(i-1)-widths.get(i)> DIFFERENCE){
-                        if (this.spanTop != null) {
-                            span = spanTop;
+
+            if (lines.size()>1) {
+                if (i == 0) {
+                    if (widths.get(i + 1) - widths.get(i) > DIFFERENCE) {
+                        if (this.spanBottom != null) {
+                            span = spanBottom;
                             PADDING = 60;
                         }
                     }
                 } else {
-                    if (widths.get(i+1) - widths.get(i) > DIFFERENCE &&
-                            widths.get(i-1) - widths.get(i) > DIFFERENCE){
-                        if (this.spanNone != null) {
-                            span = this.spanNone;
-                            PADDING = 60;
-                        }
-                    } else {
-                        if (widths.get(i-1)-widths.get(i)> DIFFERENCE && widths.get(i+1) - widths.get(i)< DIFFERENCE){
+                    if (i == lines.size() - 1) {
+                        if (widths.get(i - 1) - widths.get(i) > DIFFERENCE) {
                             if (this.spanTop != null) {
                                 span = spanTop;
                                 PADDING = 60;
                             }
+                        }
+                    } else {
+                        if (widths.get(i + 1) - widths.get(i) > DIFFERENCE &&
+                                widths.get(i - 1) - widths.get(i) > DIFFERENCE) {
+                            if (this.spanNone != null) {
+                                span = this.spanNone;
+                                PADDING = 60;
+                            }
                         } else {
-                            if (widths.get(i+1) - widths.get(i)> DIFFERENCE && widths.get(i-1)-widths.get(i)< DIFFERENCE){
-                                if (this.spanBottom != null) {
-                                    span = spanBottom;
+                            if (widths.get(i - 1) - widths.get(i) > DIFFERENCE && widths.get(i + 1) - widths.get(i) < DIFFERENCE) {
+                                if (this.spanTop != null) {
+                                    span = spanTop;
                                     PADDING = 60;
+                                }
+                            } else {
+                                if (widths.get(i + 1) - widths.get(i) > DIFFERENCE && widths.get(i - 1) - widths.get(i) < DIFFERENCE) {
+                                    if (this.spanBottom != null) {
+                                        span = spanBottom;
+                                        PADDING = 60;
+                                    }
                                 }
                             }
                         }
