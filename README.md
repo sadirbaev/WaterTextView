@@ -15,3 +15,8 @@ dependencies {
   implementation 'com.github.qarakenbacho:WaterTextView:1.0'
 }
  ```
+ 
+ 
+ 
+ 
+ [![](https://jitpack.io/v/qarakenbacho/WaterTextView.svg)](https://jitpack.io/#qarakenbacho/WaterTextView)
