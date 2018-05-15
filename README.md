@@ -17,6 +17,6 @@ dependencies {
  ```
  
  
- 
+ ![alt text] (https://github.com/qarakenbacho/WaterTextView/blob/master/screenshots/photo_2018-05-14_19-52-21.jpg)
  
  [![](https://jitpack.io/v/qarakenbacho/WaterTextView.svg)](https://jitpack.io/#qarakenbacho/WaterTextView)
