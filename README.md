@@ -1,3 +1,4 @@
+ [![](https://jitpack.io/v/qarakenbacho/WaterTextView.svg)](https://jitpack.io/#qarakenbacho/WaterTextView)
 # WaterTextView
 **Step 1.** Add the JitPack repository to your build file
 Add it in your root build.gradle at the end of repositories:
@@ -21,4 +22,4 @@ dependencies {
 </p>
 
 
- [![](https://jitpack.io/v/qarakenbacho/WaterTextView.svg)](https://jitpack.io/#qarakenbacho/WaterTextView)
+
