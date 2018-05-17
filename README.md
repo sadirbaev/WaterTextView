@@ -13,7 +13,7 @@ allprojects {
 **Step 2.** Add the dependency
 ```
 dependencies {
-  implementation 'com.github.qarakenbacho:WaterTextView:1.0'
+    implementation 'com.github.qarakenbacho:WaterTextView:1.1'
 }
  ```
 **Usage**
@@ -32,7 +32,7 @@ dependencies {
         android:layout_width="match_parent" 
         android:layout_height="wrap_content"
         android:textSize="30sp"
-        android:id="@+id/tv30"
+        android:id="@+id/tv"
         android:layout_marginBottom="20dp"/>
 
 </RelativeLayout>
@@ -40,13 +40,14 @@ dependencies {
 **MainActivity.class**
 ```
 @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        WaterTextView textView = findViewById(R.id.tv30);
-        String s = "Welcome to Water Background.";
-        textView.setText(s);
-    }
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+    WaterTextView textView = findViewById(R.id.tv);
+    String s = "Welcome to Water Background.";
+    textView.setText(s);
+    textView.setBackgroundAlpha(128); // set alpha to background from 0 to 255 value
+}
 ```
 <p align="center">
   <img src="https://github.com/qarakenbacho/WaterTextView/blob/master/screenshots/photo_2018-05-14_19-52-21.jpg" width="200"/>
