@@ -13,7 +13,7 @@ allprojects {
 **Step 2.** Add the dependency
 ```
 dependencies {
-    implementation 'com.github.qarakenbacho:WaterTextView:1.1'
+    implementation 'com.github.qarakenbacho:WaterTextView:1.2'
 }
  ```
 **Usage**
