@@ -2,6 +2,7 @@ package uz.sadirbaev.waterbackground;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.annotation.Nullable;
 import android.text.Layout;
@@ -22,6 +23,7 @@ public class WaterTextView extends android.support.v7.widget.AppCompatTextView {
     private DrawableBackgroundSpan spanTop;
     private DrawableBackgroundSpan spanBottom;
     private DrawableBackgroundSpan spanNone;
+    private int alpha = 255;
     private static int DIFFERENCE = 120;
 
 
@@ -41,16 +43,33 @@ public class WaterTextView extends android.support.v7.widget.AppCompatTextView {
     }
 
 
+    public void setBackgroundAlpha(int alpha){
+        this.alpha = alpha;
+        init();
+    }
+
     private void init(){
-        invalidate();
-        this.spanBoth = new DrawableBackgroundSpan(getResources().getDrawable(R.drawable.both9));
-        this.spanTop = new DrawableBackgroundSpan(getResources().getDrawable(R.drawable.top9));
-        this.spanBottom = new DrawableBackgroundSpan(getResources().getDrawable(R.drawable.bottom9));
-        this.spanNone = new DrawableBackgroundSpan(getResources().getDrawable(R.drawable.none9));
+        Drawable both = getResources().getDrawable(R.drawable.both);
+        both.setAlpha(alpha);
+        this.spanBoth = new DrawableBackgroundSpan(both);
+
+        Drawable top = getResources().getDrawable(R.drawable.top);
+        top.setAlpha(alpha);
+        this.spanTop = new DrawableBackgroundSpan(top);
+
+        Drawable bottom = getResources().getDrawable(R.drawable.bottom);
+        bottom.setAlpha(255);
+        this.spanBottom = new DrawableBackgroundSpan(bottom);
+
+        Drawable none = getResources().getDrawable(R.drawable.none);
+        none.setAlpha(255);
+        this.spanNone = new DrawableBackgroundSpan(none);
+
         this.setGravity(Gravity.CENTER);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             this.setBreakStrategy(Layout.BREAK_STRATEGY_SIMPLE);
         }
+        invalidate();
     }
 
 
