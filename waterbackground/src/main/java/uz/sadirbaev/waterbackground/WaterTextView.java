@@ -23,7 +23,7 @@ public class WaterTextView extends android.support.v7.widget.AppCompatTextView {
     private DrawableBackgroundSpan spanTop;
     private DrawableBackgroundSpan spanBottom;
     private DrawableBackgroundSpan spanNone;
-    private int alpha = 255;
+    private int alpha = 85;
     private static int DIFFERENCE = 120;
 
 
